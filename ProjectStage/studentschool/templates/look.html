@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{% static 'studentschool/images/help.png' %}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajaxgoogleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <title>LinkedinBot</title>
+    <style type="text/css">
+        .bg {
+            /* The image used */
+            background-image: url("{% static 'studentschool/images/body.jpg' %}");
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .cards {
+            width: 100%;
+        }
+        
+        .divs {
+            width: 100%;
+            margin: 10px;
+        }
+        
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <div class="container">
+        <div><br><br></div>
+        <div class="row">
+            <div class="col">
+                <br><br>
+                <div class="card cards">
+                    <img src="{% static 'studentschool/images/ENSET.jpg' %}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title text-center btn-outline-primary"><strong>Ecole Normale Supérieure de l'Enseignement Technique - Mohammedia</strong></h5>
+                        <p class="card-text" style="text-align: justify">
+                            <b style="color: green">ENSET-M</b> is one of other establishments whose vocation is the training of senior engineers and trainers, capable of responding to national guidelines in differents areas(Computer science, Mecanic,
+                            Electric ...).</p>
+                        <div><a href="https://www.enset-media.ac.ma/enset/mot-du-directeur" class="btn btn-primary" target="_blank" style="width: 100%">For more infos</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="center-block">
+
+                    <div class="text-center"><a href=" " class="btn btn-secondary" style="margin-bottom:10px"><span class="glyphicon glyphicon-home"></span> Accueil</a></div>
+                    <div class="text-center btn-warning">
+                        <div class="alert alert-warning" role="alert">
+                            <strong>This is a programme searching schools of students who have attended CPGEs(2019 promotion), using informations available in LinkedIn</strong>
+                        </div>
+
+                    </div>
+                    <div class="card shadow-lg p-3 mb-5 bg-white rounded-lg ">
+                        <div class="card-header text-center bg-transparent"><img src="{% static 'studentschool/images/student.png' %}" /></div>
+                        <div class="card-body">
+                            <form method="post" class="d-block" id="login">
+                                {% csrf_token %} {{search.as_p}}
+                                <div class="invalid-feedback d-block"></div><br>
+                                <div class="invalid-feedback d-block"></div><br />
+                                <button class="btn btn-primary center-block" type="submit" name="login" form="login" style="margin:auto"><span class="glyphicon glyphicon-log-in"></span> Search</button>
+                            </form>
+                            <br>
+                            <div class="text-center">{{msg|safe}}</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <br><br>
+                <div class="card cards">
+                    <img src="{% static 'studentschool/images/datum.png' %}" class="card-img-top" alt="Logo de l'entreprise Datum">
+                    <div class="card-body">
+                        <h5 class="card-title text-center btn-outline-primary"><strong>DATUM Company - Casablanca</strong></h5><br>
+                        <p class="card-text" style="text-align: justify">
+                            <b style="color: green">DATUM</b> is a Moroccan limited liability company (SARL) created in 2017. It operates in different areas(Data science, Establishment of information systems,Digital Marketing ...).<br> Among his achievements,
+                            we find : <br> * Setting up of information platforms<br> * Elaboration of market studies
+                        </p>
+                        <div><a href=" www.datum.ma" class="btn btn-primary" target="_blank" style="width: 100%">For more infos</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center" style="background-color: rgb(188, 177, 232)">
+
+        <strong>
+        developed py : KOUHOU MOHAMED <br>
+        Student at   : ENSET-M <br>
+        Option       : Big Data & Cloud Computing <br>
+        <a href="https://www.linkedin.com/in/mohamed-kouhou-65a212169/" target="_blank">@Linkedin_account : KouhouMohamed</a><br>
+        <a href="https://github.com/KouhouMohamed/" target="_blank">@GitHub_account   : KouhouMohamed</a><br>
+    </strong>
+        <h5 style="margin-bottom: 0px">@2019-2020 <br></h5>
+
+    </div>
+</body>
+
+</html>
